@@ -1,0 +1,37 @@
+# RCS Number Checker API
+
+> Official CheckNumber code examples for a bulk, asynchronous API used to verify whether phone numbers have RCS enabled.
+
+Base URL: https://api.checknumber.ai
+Authentication: X-API-Key request header
+
+## Workflow
+
+1. Submit: POST https://api.checknumber.ai/v1/tasks with `file` and `task_type=rcs`.
+2. Poll: POST https://api.checknumber.ai/v1/gettasks with `task_id`.
+3. Download: retrieve `result_url` after status becomes `exported`.
+
+## Variants
+
+- `task_type=rcs` — RCS Number Checker: https://docs.checknumber.ai/rcs-checker
+
+## Pricing
+
+Current terms: https://checknumber.ai/pricing
+Balance endpoint: GET https://api.checknumber.ai/v1/balance
+
+## Docs
+
+- Canonical documentation: https://docs.checknumber.ai/rcs-checker
+- Dashboard and API keys: https://platform.checknumber.ai
+
+## Code examples
+
+- examples/python
+- examples/nodejs
+- examples/go
+- examples/java
+- examples/csharp
+- examples/php
+- examples/javascript
+- examples/shell
