@@ -1,10 +1,15 @@
 {
   "name": "RCS Number Checker API",
+  "brand": "CheckNumber",
   "slug": "rcs-number-checker-api",
-  "description": "Bulk asynchronous file-based API used to verify whether phone numbers have RCS enabled.",
+  "repository": "checkernumber/rcs-number-checker-api",
+  "description": "Asynchronous file-based RCS checks.",
+  "official_site": "https://checknumber.ai",
+  "landing_page": "https://checknumber.ai/products/rcs",
   "canonical_docs": "https://docs.checknumber.ai/rcs-checker",
   "dashboard": "https://platform.checknumber.ai",
   "base_url": "https://api.checknumber.ai",
+  "mode": "async",
   "auth": {
     "type": "api_key",
     "header": "X-API-Key"
@@ -24,28 +29,25 @@
     }
   },
   "input": {
-    "file_format": "text; one E.164 phone number per line, or one email per line for email task types"
+    "file_format": "text file, one E.164 phone number per line according to task type"
   },
-  "result_fields": [
-    {
-      "field": "Number",
-      "description": "Phone number in E.164 format",
-      "example": "+12025551234"
-    },
-    {
-      "field": "rcs",
-      "description": "Whether number has RCS enabled",
-      "example": "yes, no"
-    }
-  ],
   "products": [
     {
       "task_type": "rcs",
-      "name": "RCS Number Checker",
+      "name": "Number Checker",
       "doc_slug": "rcs-checker",
-      "input_kind": "phone"
+      "input_kind": "phone",
+      "min_numbers": 500,
+      "max_numbers": 10000000,
+      "result_fields": [
+        "number",
+        "activated",
+        "system"
+      ]
     }
   ],
   "pricing_url": "https://checknumber.ai/pricing",
-  "last_updated": "2026-07-13"
+  "maintainer": "CheckNumber",
+  "license": "MIT",
+  "last_reviewed": "2026-08-18"
 }
